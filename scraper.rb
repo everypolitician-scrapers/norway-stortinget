@@ -55,7 +55,6 @@ def scrape_term(t)
     if t[:id][0...4].to_i >= 1997
       data[:image] = 'http://data.stortinget.no/eksport/personbilde?personid=%s&storrelse=middels' % data[:id] 
     end
-    puts data
     ScraperWiki.save_sqlite([:id, :term], data)
   end
 end
