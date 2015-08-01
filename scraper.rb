@@ -41,6 +41,8 @@ def scrape_term(t)
       id: field.('id'),
       given_name: field.('fornavn'),
       family_name: field.('etternavn'),
+      name: "%s %s" % [field.('fornavn'), field.('etternavn')],
+      sort_name: "%s, %s" % [field.('etternavn'), field.('fornavn')],
       birth_date: date_from(field.('foedselsdato')),
       gender: gender_from(field.('kjoenn')),
       area: field.('fylke/navn'),
